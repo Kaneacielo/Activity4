@@ -23,6 +23,17 @@ ownerid INT,
 FOREIGN KEY (ownerid) REFERENCES owners(ownerid)
 );
 
+CREATE TABLE doctors (
+
+doctorid INT,
+dfirstnames VARCHAR (50),
+dlastname VARCHAR (50),
+specialty VARCHAR (100),
+phone VARCHAR (15),
+email VARCHAR (100),
+PRIMARY KEY (doctorid)
+);
+
 CREATE TABLE appointments (
 
 appointid INT,
