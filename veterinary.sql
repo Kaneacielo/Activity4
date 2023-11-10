@@ -154,6 +154,6 @@ UPDATE doctors
 SET dlastname = 'Reyes-Gonzales'
 WHERE dfirstnames = 'Dr. Sofia'
 
---step 27
-SELECT DISTINCT species
-FROM animals
+-- step 28
+SELECT SUM(totalamount) AS totalsales
+FROM invoices
