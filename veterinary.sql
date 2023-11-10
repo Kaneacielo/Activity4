@@ -153,3 +153,7 @@ WHERE appointid = 8;
 UPDATE doctors
 SET dlastname = 'Reyes-Gonzales'
 WHERE dfirstnames = 'Dr. Sofia'
+
+--step 27
+SELECT DISTINCT species
+FROM animals
