@@ -148,3 +148,8 @@ WHERE appointid = 8;
 
 DELETE FROM appointments
 WHERE appointid = 8;
+
+--step 26
+UPDATE doctors
+SET dlastname = 'Reyes-Gonzales'
+WHERE dfirstnames = 'Dr. Sofia'
