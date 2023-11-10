@@ -43,3 +43,13 @@ reason VARCHAR(255),
 PRIMARY KEY (appointid),
 FOREIGN KEY (animalid) REFERENCES animals(animalid)
 );
+
+CREATE TABLE invoices (
+
+invoicesid INT,
+appointid INT,
+totalamount NUMERIC(10,2),
+paymentdate TIME,
+PRIMARY KEY (invoicesid),
+FOREIGN KEY (appointid) REFERENCES appointments(appointid)
+);
