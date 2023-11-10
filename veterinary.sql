@@ -22,3 +22,13 @@ color VARCHAR(50),
 ownerid INT,
 FOREIGN KEY (ownerid) REFERENCES owners(ownerid)
 );
+
+CREATE TABLE appointments (
+
+appointid INT,
+animalid INT,
+appointdate DATE,
+reason VARCHAR(255),
+PRIMARY KEY (appointid),
+FOREIGN KEY (animalid) REFERENCES animals(animalid)
+);
