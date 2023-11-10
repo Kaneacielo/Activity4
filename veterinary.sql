@@ -86,7 +86,7 @@ INSERT INTO appointments (appointid, animalid, appointdate, reason)
 (4, 4, '2023-02-15', 'Dental cleaning'),
 (5, 5, '2023-03-05', 'Skin condition'),
 (6, 6, '2023-03-10', 'Check for fleas'),
-(7, 7, '2023-04-12', 'Vaccination'),
+(7, 2, '2023-04-12', 'Vaccination'),
 (8, 8, '2023-04-18', 'Spraying/neutering'),
 (9, 9, '2023-05-02', 'Allergy treatment'),
 (10,10,'2023-05-20', 'Eye infection');
@@ -131,7 +131,7 @@ VALUES
     (4, 4, '2023-02-15 00:00:00', 1, 'Dental cleaning', 'N/A', 'Completed dental cleaning procedure'),
     (5, 5, '2023-03-10 00:00:00', 4, 'Skin infection', 'Antibiotics', 'Prescribed antibiotics for skin infection'),
     (6, 6, '2023-03-10 00:00:00', 2, 'Flea infestation', 'Flea Treatment', 'Administered flea treatment'),
-    (7, 7, '2023-04-12 00:00:00', 1, 'Vaccination', 'Vaccine Y', 'Administered vaccination Y as per schedule'),
+    (7, 2, '2023-04-12 00:00:00', 1, 'Vaccination', 'Vaccine Y', 'Administered vaccination Y as per schedule'),
     (8, 8, '2023-04-18 00:00:00', 5, 'Spaying', 'N/A', 'Successfully performed spaying surgery'),
     (9, 9, '2023-05-02 00:00:00', 4, 'Allergic reaction', 'Antihistamines', 'Allergic reaction due to food prescribed antihistamine'),
     (10, 10, '2023-05-20 00:00:00', 6, 'Conjunctivitis', 'Eye drops', 'Prescribed eye drops for conjunctivitis');
@@ -149,6 +149,11 @@ WHERE appointid = 8;
 DELETE FROM appointments
 WHERE appointid = 8;
 
+--step 27
+SELECT DISTINCT species
+FROM animals
+
+
 --step 26
 UPDATE doctors
 SET dlastname = 'Reyes-Gonzales'
@@ -163,3 +168,12 @@ FROM invoices
 SELECT COUNT (*) AS totalappointments
 FROM appointments
 WHERE animalid = 2
+
+--step 30
+
+SELECT animals.animalid, animals.name, COUNT(*) AS appointment_count
+FROM animals
+JOIN appointments ON animals.animalid = appointments.animalid
+GROUP BY animals.animalid, animals.name
+ORDER BY appointment_count ASC
+LIMIT 1;
