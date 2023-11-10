@@ -157,3 +157,9 @@ WHERE dfirstnames = 'Dr. Sofia'
 -- step 28
 SELECT SUM(totalamount) AS totalsales
 FROM invoices
+
+--step 29
+
+SELECT COUNT (*) AS totalappointments
+FROM appointments
+WHERE animalid = 2
